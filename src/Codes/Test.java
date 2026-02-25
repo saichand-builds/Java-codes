@@ -1,3 +1,5 @@
+package Codes;
+
 public class Test {
 
     static void print(int x) {
