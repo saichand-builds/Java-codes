@@ -31,8 +31,9 @@ class Singleton {
 public class SingleTonClass {
     static void main(String[] args) {
             // 1. First Call to getInstance()
-
+            // output is -> Object is created
         Singleton s1= Singleton.getInstance();
+        // if condition is failed.so it reurn instance
         Singleton s2=Singleton.getInstance();
         System.out.println(s1);
         System.out.println(s2);
