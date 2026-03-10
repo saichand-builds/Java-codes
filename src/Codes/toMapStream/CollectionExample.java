@@ -10,10 +10,14 @@ public class CollectionExample {
 
     static void main(String[] args) {
 
-        List<Employee> employees = Arrays.asList(new Employee(12, "Sai", 324.2), new Employee(21, "Harsi", 82378.3), new Employee(34, "Shafi", 7373.3));
+        List<Employee> employees = Arrays.asList(new Employee(12, "Sai", 324.2),
+                new Employee(21, "Harsi", 82378.3),
+                new Employee(34, "Shafi", 7373.3));
 
 
-        Map<Integer, String> IdAndMap = employees.stream().collect(Collectors.toMap(Employee::getId, Employee::getName));
+        Map<Integer, String> IdAndMap = employees
+                .stream().
+                collect(Collectors.toMap(Employee::getId, Employee::getName));
 
         System.out.println("ID   and  Get Name");
         IdAndMap.forEach((Id, Name) -> System.out.println(Id + "  " + Name));
