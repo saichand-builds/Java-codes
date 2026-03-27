@@ -27,13 +27,36 @@ public class DeptmentData {
 */
 
 
-        Employees emp=list.stream()
+ /*       Employees emp=list.stream()
                         .sorted(Comparator.comparing(Employees :: getSalrary).reversed())
                                 .skip(1)
                                         .findFirst()
                                                 .orElse(null);
 
-        System.out.println(emp);
+        System.out.println(emp);*/
+/*
+
+
+        Map<String , List<Employees>> result= list.stream()
+                .collect(Collectors.groupingBy(Employees :: getDept));
+
+        System.out.println(result);
+*/
+
+        Map<String, List<Double>> result= list.stream()
+                .collect(Collectors.groupingBy(Employees :: getDept,
+                        Collectors.mapping(Employees:: getSalrary,Collectors.toList())));
+
+
+
+
+
+
+                /*.collect(Collectors.groupingBy(Employees::getDept
+                        ,Collectors.mapping(Employees :: getName,Collectors.toList()
+                        )));
+        System.out.println(result);
+*/
 
     }
 }
