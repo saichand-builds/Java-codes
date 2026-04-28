@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class DuplicateExample1 {
 
@@ -20,7 +21,12 @@ public class DuplicateExample1 {
                 n -> !set.add(n)
                 // printing the elements
         ).forEach(System.out::println);
+/*
+        List<Integer> duplite= numbers.stream()
+                .distinct()
+                .collect(Collectors.toList());
 
+        System.out.println(duplite);*/
 
     }
 }
